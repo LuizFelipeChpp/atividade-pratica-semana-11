@@ -137,6 +137,8 @@ if (detalhes) {
   const id = Number(parametros.get("id"));
 
   const equipe = equipes.find(item => item.id === id);
+  
+  console.log(equipes);
 
   if (equipe) {
 
