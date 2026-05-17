@@ -1,0 +1,242 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(white, rgb(236, 102, 102));
+  font-family: Arial, sans-serif;
+  opacity: 0;
+  animation: aparecer 0.6s ease forwards;
+}
+
+@keyframes aparecer {
+  to {
+    opacity: 1;
+  }
+}
+
+.header {
+  background-color: rgb(247, 113, 113);
+  color: white;
+  margin: 0;
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+  padding: 30px;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.nav ul li {
+  margin: 0 15px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+
+.main {
+  padding: 20px;
+}
+
+.explicacao {
+  background-color: white;
+  border-left: 5px solid #920a05;
+  border-top: #920a05 solid 5px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+h2 {
+  text-align: center;
+}
+
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.form button {
+  padding: 10px;
+}
+
+
+.grid-equipes{
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 35px;
+
+  padding: 20px;
+
+  justify-items: center;
+}
+
+
+
+   .card{
+  min-height: auto;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ddd;
+  transition: 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  transition: all 0.3s ease;
+  min-height: 140px;
+   }
+
+   .card:hover {
+  border: 1px solid #e10600;
+  transform: scale(1.05);
+}
+
+.card img {
+  height: 90px;
+  border-radius: 10%;
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+}
+
+.card p {
+  margin-top: 10px;
+}
+
+/* DESTAQUE (CADILLAC EMBAIXO) */
+.destaque {
+  grid-column: span 5;
+  width: 150px;
+  margin: 0 auto;
+}
+
+
+.footer {
+  text-align: center;
+  margin: 20px;
+}
+
+button {
+  background-color: #e47470;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.card button{
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+button:hover {
+  background-color: #dd1616;
+}
+
+.form input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.main {
+  display: flex; 
+}
+
+.row{
+row-gap:15px;
+}
+
+
+
+
+
+
+/* mobile */
+@media (max-width: 768px) {
+  
+  .main {
+    flex-direction: column ; 
+    padding: 10px;
+  }
+
+  .sidebar {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  
+  .grid-equipes {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+  }
+
+  
+  .destaque {
+    grid-column: span 2; 
+    width: 160px;
+    margin: 0 auto;
+  }
+
+  
+  .form form {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  
+  .logo-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header h1 {
+    font-size: 1.2rem; 
+    line-height: 1.2;
+  }
+
+  .header-logo {
+    max-height: 30px;
+  }
+}
+
+
+
