@@ -3,6 +3,7 @@ const equipes = [
   {
     id: 1,
     nome: "McLaren",
+    destaque: true,
     imagem: "imgs/mclaren.png",
     descricao: "Equipe britânica multicampeã da Fórmula 1.",
     motor: "Mercedes-AMG F1 M17",
@@ -28,6 +29,7 @@ const equipes = [
   {
     id: 2,
     nome: "Red Bull Racing",
+    destaque: true,
     imagem: "imgs/redbull.png",
     descricao: "Equipe austríaca multicampeã da Fórmula 1, famosa por sua hegemonia com  Max Verstappen.",
     motor: "Honda RBPT",
@@ -51,6 +53,7 @@ const equipes = [
   {
     id: 3,
     nome: "Ferrari",
+    destaque: true,
     imagem: "imgs/ferrari.png",
     descricao: "Lendária escuderia italiana e a maior campeã da história da Fórmula 1",
     motor: "067/6",
@@ -73,6 +76,7 @@ const equipes = [
   {
     id: 4,
     nome: "Mercedes",
+    destaque: true,
     imagem: "imgs/mercedes.png",
     descricao:"Dominante equipe alemã e octacampeã consecutiva da Fórmula 1",
     motor: "Mercedes-AMG F1 M17",
@@ -95,6 +99,7 @@ const equipes = [
   {
     id: 5,
     nome: "Aston Martin",
+    destaque: false,
     imagem: "imgs/aston.png",
     descricao:"Clássica marca britânica com um projeto ambicioso na Fórmula 1",
     motor: "Honda RA626H",
@@ -117,6 +122,7 @@ const equipes = [
   {
     id: 6,
     nome: "Alpine",
+    destaque: false,
     imagem: "imgs/alpine.png",
     descricao: "Equipe francesa que carrega a herança e tradição esportiva da Renault",
     motor: "Renault",
@@ -139,46 +145,117 @@ const equipes = [
   {
     id: 7,
     nome: "Haas",
+    destaque: false,
     imagem: "imgs/haas.png",
+    descricao: "Única equipe americana do grid, focada em eficiência e fortes parcerias técnicas",
     motor: "Ferrari",
-    pilotos: "Bearman e Ocon",
-    titulo: "Entrou na F1 em 2016"
+    pais: "Estados Unidos",
+    fundacao: "2016",
+    titulo: "0 Titulos",
+    pilotos: [
+      {
+        nome: "Esteban Ocon",
+        imagem: "imgsPilotos/Ocon.jpg"
+      },
+
+      {
+        nome: "Oliver Bearman",
+        imagem:" imgsPilotos/Bearman.jpg",
+      },
+    ]
   },
 
   {
     id: 8,
     nome: "Williams",
+    destaque: false,
     imagem: "imgs/williams.png",
-    motor: "Mercedes",
-    pilotos: "Albon e Sainz",
-    titulo: "9 títulos mundiais"
+    descricao: "Histórica escuderia britânica em processo de reconstrução para reviver seus dias de glória",
+    motor: "Mercedes-AMG",
+    pais: "Reino Unido",
+    fundacao: "1997",
+    titulo: "9 títulos mundiais",
+    pilotos: [
+      {
+        nome: "Alexander Albon",
+        imagem: "imgsPilotos/Albon.jpg"
+      },
+      
+      {
+        nome: "Carlos Sainz",
+        imagem: "imgsPilotos/Sainz.jpg"
+      }
+    ]
   },
 
   {
     id: 9,
     nome: "RB",
+    destaque: false,
     imagem: "imgs/rb.png",
-    motor: "Honda RBPT",
-    pilotos: "Tsunoda e Ricciardo",
-    titulo: "Antiga AlphaTauri"
+    descricao: "Equipe italiana irmã da Red Bull, focada em revelar talentos e competir no meio do grid",
+    motor: "Red Bull Ford Powertrains",
+    pais: "Itália",
+    fundacao: "2024, ano que assumiu essa nova identidade",
+    titulo: "0 Titulos",
+    pilotos: [
+      {
+        nome: "Yuki Tsunoda",
+        imagem: "imgsPilotos/Tsunoda.jpg"
+      },
+
+      {
+        nome: "Liam Lawson",
+        imagem: "imgsPilotos/Lawson.jpg"
+      }
+    ]
   },
 
   {
     id: 10,
     nome: "Audi",
+    destaque: false,
     imagem: "imgs/audi.png",
+    descricao:"Gigante automotiva alemã que estreia na Fórmula 1 como equipe de fábrica",
     motor: "Audi",
-    pilotos: "Ainda não definidos",
-    titulo: "Entrada oficial em 2026"
+    pais: "Alemanhã",
+    fundacao: "2026, ano que estreiou oficialmente na categoria",
+    titulo: "0 titulos",
+    pilotos: [
+      {
+        nome: "Gabriel Bortoleto",
+        imagem: "imgsPilotos/Bortoleto.jpg"
+      },
+
+      {
+        nome: "Nico Hülkenberg",
+        imagem: "imgsPilotos/Hulkenberg.jpg"
+      }
+
+    ]
   },
 
   {
     id: 11,
     nome: "Cadillac",
+    destaque: false,
     imagem: "imgs/cadillac.png",
+    descricao: "A 11ª equipe do grid, marcando a entrada oficial da General Motors na F1",
     motor: "Ferrari",
-    pilotos: "Ainda não definidos",
-    titulo: "Estreia em 2026"
+    pais: "Estados Unidos",
+    fundacao:"2026, ano de estreia na f1",
+    titulo: "0 titulos",
+    pilotos: [
+      {
+        nome: "Sergio Pérez",
+        imagem: "imgsPilotos/Perez.jpg"
+      },
+
+      {
+        nome: "Valtteri Bottas",
+        imagem: "imgsPilotos/Bottas.jpg"
+      }
+    ]
   }
 
 ];
@@ -288,4 +365,44 @@ ${equipe.pilotos.map(piloto => `
 
 `;
   }
+}
+
+
+
+
+const carousel = document.getElementById("carousel-container");
+
+if (carousel) {
+
+  const destaques = equipes.filter(equipe => equipe.destaque);
+
+  destaques.forEach((equipe, index) => {
+
+    carousel.innerHTML += `
+
+      <div class="carousel-item ${index === 0 ? "active" : ""}">
+
+        <img
+          src="${equipe.imagem}"
+          class="d-block w-100 carousel-img"
+          alt="${equipe.nome}">
+
+        <div class="carousel-caption">
+
+          <h3>${equipe.nome}</h3>
+
+          <p>${equipe.descricao}</p>
+
+          <a href="detalhes.html?id=${equipe.id}">
+            <button>Ver equipe</button>
+          </a>
+
+        </div>
+
+      </div>
+
+    `;
+
+  });
+
 }

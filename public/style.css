@@ -128,7 +128,6 @@ h2 {
   margin-top: 10px;
 }
 
-/* DESTAQUE (CADILLAC EMBAIXO) */
 .destaque {
   grid-column: span 5;
   width: 150px;
@@ -223,9 +222,43 @@ row-gap:15px;
   object-fit:cover
 }
 
+.carousel-img{
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+  background-color: #000000;
+}
 
+.carousel-caption{
+  background: rgba(0,0,0,.7);
+  border-radius: 10px;
+  padding: 10px;
+  max-width: 500px;
+  margin: auto;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
+#carouselF1{
+  max-width: 900px;
+  margin: 0 auto;
+}
 
+.carousel-inner{
+    border-radius: 20px;
+}
+
+.sobre-autor{
+  background: rgb(112, 47, 47);
+  color: white;
+  padding: 30px;
+  border-radius: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+
+}
 
 
 /* mobile */
@@ -240,6 +273,7 @@ row-gap:15px;
     width: 100%;
     margin-bottom: 20px;
   }
+
 
   
   .grid-equipes {
